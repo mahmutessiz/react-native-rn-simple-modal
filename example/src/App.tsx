@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import { useState } from 'react';
-import { StyleSheet, Pressable, Text } from 'react-native';
+import { StyleSheet, Pressable, Text, View } from 'react-native';
 import { OpenDetails } from 'react-native-rn-simple-modal';
 export default function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +19,11 @@ export default function App() {
         closeBtnBgColor="yellow"
         detailsColor="black"
       />
-      <Pressable style={[styles.box]} onPress={() => setIsOpen(!isOpen)}>
-        <Text>Open Details</Text>
-      </Pressable>
+      <View>
+        <Pressable style={[styles.box]} onPress={() => setIsOpen(!isOpen)}>
+          <Text>Open Details</Text>
+        </Pressable>
+      </View>
     </>
   );
 }
@@ -33,15 +35,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    width: '70%',
+    width: '50%',
     padding: 20,
-    marginVertical: 60,
+    marginVertical: 20,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'tomato',
     alignSelf: 'center',
-    marginTop: '80%',
+    marginTop: '70%',
     borderRadius: 10,
-    elevation: 15,
+    elevation: 5,
   },
 });

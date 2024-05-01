@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
 export default function OpenDetails(props: {
   isOpen: boolean;
   onToggle: () => void;
@@ -14,19 +14,18 @@ export default function OpenDetails(props: {
 }) {
   return (
     <View
-      style={{
-        display: props.isOpen === true ? 'flex' : 'none',
-        position: 'absolute',
-        shadowOpacity: 0.5,
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        backgroundColor: 'rgba(0, 0, 0, 0.1)',
-        justifyContent: 'center',
-        alignItems: 'center',
-        zIndex: 99999,
-      }}
+      style={[
+        StyleSheet.absoluteFill,
+        {
+          display: props.isOpen === true ? 'flex' : 'none',
+          shadowOpacity: 0.5,
+          backgroundColor: 'rgba(0, 0, 0, 0.1)',
+          justifyContent: 'center',
+          alignItems: 'center',
+          zIndex: 8,
+          elevation: 8,
+        },
+      ]}
     >
       <View
         style={{
@@ -38,7 +37,8 @@ export default function OpenDetails(props: {
           minHeight: 250,
           gap: 10,
           justifyContent: 'center',
-          elevation: 5,
+          zIndex: 9,
+          elevation: 9,
         }}
       >
         {/* Close button */}
@@ -60,6 +60,7 @@ export default function OpenDetails(props: {
               justifyContent: 'center',
               elevation: 5,
             }}
+            pointerEvents="box-only"
             onPress={props.onToggle}
           >
             <Text
