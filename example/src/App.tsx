@@ -1,19 +1,28 @@
 import * as React from 'react';
 
-import { StyleSheet, View, Text } from 'react-native';
-import { multiply } from 'react-native-rn-simple-modal';
-
+import { useState } from 'react';
+import { StyleSheet, Pressable, Text } from 'react-native';
+import { OpenDetails } from 'react-native-rn-simple-modal';
 export default function App() {
-  const [result, setResult] = React.useState<number | undefined>();
-
-  React.useEffect(() => {
-    multiply(3, 7).then(setResult);
-  }, []);
-
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <View style={styles.container}>
-      <Text>Result: {result}</Text>
-    </View>
+    <>
+      <OpenDetails
+        title="Open Details"
+        isOpen={isOpen}
+        onToggle={() => {
+          setIsOpen(!isOpen);
+        }}
+        details="Details"
+        titleColor="teal"
+        closeBtnColor="darkgray"
+        closeBtnBgColor="yellow"
+        detailsColor="black"
+      />
+      <Pressable style={[styles.box]} onPress={() => setIsOpen(!isOpen)}>
+        <Text>Open Details</Text>
+      </Pressable>
+    </>
   );
 }
 
@@ -24,8 +33,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   box: {
-    width: 60,
-    height: 60,
-    marginVertical: 20,
+    width: '70%',
+    padding: 20,
+    marginVertical: 60,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'tomato',
+    alignSelf: 'center',
+    marginTop: '80%',
+    borderRadius: 10,
+    elevation: 15,
   },
 });
