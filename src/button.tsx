@@ -1,5 +1,7 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
+
 export default function OpenDetails(props: {
   isOpen: boolean;
   onToggle: () => void;
@@ -17,7 +19,7 @@ export default function OpenDetails(props: {
       style={[
         StyleSheet.absoluteFill,
         {
-          display: props.isOpen === true ? 'flex' : 'none',
+          display: props.isOpen ? 'flex' : 'none',
           shadowOpacity: 0.5,
           backgroundColor: 'rgba(0, 0, 0, 0.1)',
           justifyContent: 'center',

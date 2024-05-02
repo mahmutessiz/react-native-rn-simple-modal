@@ -7,6 +7,13 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
+      <View>
+        <Pressable style={[styles.box]} onPress={() => setIsOpen(!isOpen)}>
+          <Text>Open Details</Text>
+        </Pressable>
+      </View>
+
+      {/* add this component to bottom of your app. It will work better. */}
       <OpenDetails
         title="Open Details"
         isOpen={isOpen}
@@ -19,11 +26,6 @@ export default function App() {
         closeBtnBgColor="yellow"
         detailsColor="black"
       />
-      <View>
-        <Pressable style={[styles.box]} onPress={() => setIsOpen(!isOpen)}>
-          <Text>Open Details</Text>
-        </Pressable>
-      </View>
     </>
   );
 }
@@ -42,7 +44,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: 'tomato',
     alignSelf: 'center',
-    marginTop: '70%',
+    marginTop: '30%',
     borderRadius: 10,
     elevation: 5,
   },
