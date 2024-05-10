@@ -7,7 +7,7 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <View>
+      <View style={styles.container}>
         <Pressable style={[styles.box]} onPress={() => setIsOpen(!isOpen)}>
           <Text>Open Details</Text>
         </Pressable>
@@ -25,7 +25,7 @@ export default function App() {
         closeBtnColor="white"
         closeBtnBgColor="teal"
         detailsColor="black"
-        bgLayerColor="teal"
+        bgLayerColor="transparent"
         popupBgColor="skyblue"
         marginTop={-20}
       />
@@ -35,7 +35,8 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    width: '100%',
+    backgroundColor: 'white',
     alignItems: 'center',
     justifyContent: 'center',
   },

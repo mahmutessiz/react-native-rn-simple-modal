@@ -1,6 +1,6 @@
 {
   "name": "react-native-rn-simple-modal",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A library to create modals.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
