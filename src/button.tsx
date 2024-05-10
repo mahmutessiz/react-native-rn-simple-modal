@@ -2,20 +2,59 @@
 import React from 'react';
 import { View, Text, Pressable, StyleSheet } from 'react-native';
 
-export default function OpenDetails(props: {
+interface OpenDetailsProps {
+  /**
+   * A boolean flag indicating whether the details modal is open.
+   */
   isOpen: boolean;
+
+  /**
+   * A function to be called when the close button is pressed, toggling the modal's visibility.
+   */
   onToggle: () => void;
+
+  /**
+   * The title text to be displayed in the details modal.
+   */
   title: string;
+
+  /**
+   * The detailed information to be displayed in the modal.
+   */
   details: string;
-  // styling props
+
+  // Styling props with descriptions (similar format for others)
+  /**
+   * Background color for the modal popup.
+   */
   popupBgColor?: string;
+  /**
+   * Color for the details text.
+   */
   detailsColor?: string;
+  /**
+   * Color for the title text.
+   */
   titleColor?: string;
-  closeBtnColor?: string;
+  /**
+   * Background color for the close button.
+   */
   closeBtnBgColor?: string;
+  /**
+   * Color for the close button text.
+   */
+  closeBtnColor?: string;
+  /**
+   * Background color for the modal overlay layer.
+   */
   bgLayerColor?: string;
+  /**
+   * Margin from the top of the screen for the modal content.
+   */
   marginTop?: number;
-}) {
+}
+
+export default function OpenDetails(props: OpenDetailsProps) {
   return (
     <View
       style={[
@@ -47,7 +86,6 @@ export default function OpenDetails(props: {
         }}
       >
         {/* Close button */}
-
         <Pressable
           style={{
             position: 'absolute',
@@ -64,6 +102,7 @@ export default function OpenDetails(props: {
           }}
           pointerEvents="box-only"
           onPress={props.onToggle}
+          accessibilityLabel="Close details modal" // Accessibility improvement
         >
           <Text
             style={{
