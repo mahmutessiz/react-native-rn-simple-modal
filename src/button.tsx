@@ -8,11 +8,13 @@ export default function OpenDetails(props: {
   title: string;
   details: string;
   // styling props
-  bgColor?: string;
+  popupBgColor?: string;
   detailsColor?: string;
   titleColor?: string;
   closeBtnColor?: string;
   closeBtnBgColor?: string;
+  bgLayerColor?: string;
+  marginTop?: number;
 }) {
   return (
     <View
@@ -21,7 +23,7 @@ export default function OpenDetails(props: {
         {
           display: props.isOpen ? 'flex' : 'none',
           shadowOpacity: 0.5,
-          backgroundColor: 'rgba(0, 0, 0, 0.1)',
+          backgroundColor: props.bgLayerColor || 'rgba(0, 0, 0, 0.1)',
           justifyContent: 'center',
           alignItems: 'center',
           zIndex: 8,
@@ -31,12 +33,15 @@ export default function OpenDetails(props: {
     >
       <View
         style={{
+          position: 'relative',
           width: '90%',
-          backgroundColor: props.bgColor || 'white',
+          minHeight: 250,
+          marginTop: props.marginTop || 0,
+          backgroundColor: props.popupBgColor || 'white',
           paddingHorizontal: 20,
+          paddingVertical: 20,
           marginHorizontal: 20,
           borderRadius: 10,
-          minHeight: 250,
           gap: 10,
           justifyContent: 'center',
           zIndex: 9,
@@ -44,38 +49,34 @@ export default function OpenDetails(props: {
         }}
       >
         {/* Close button */}
-        <View
+
+        <Pressable
           style={{
-            width: '100%',
-            justifyContent: 'flex-end',
-            alignItems: 'flex-end',
+            position: 'absolute',
+            width: 30,
+            height: 30,
+            top: 10,
+            right: 10,
+            borderRadius: 5,
+            backgroundColor: props.closeBtnBgColor || 'gray',
+            alignSelf: 'flex-end',
+            alignItems: 'center',
+            justifyContent: 'center',
+            elevation: 5,
           }}
+          pointerEvents="box-only"
+          onPress={props.onToggle}
         >
-          <Pressable
+          <Text
             style={{
-              padding: 5,
-              paddingHorizontal: 10,
-              marginTop: -25,
-              borderRadius: 5,
-              backgroundColor: props.closeBtnBgColor || 'gray',
-              alignItems: 'center',
-              justifyContent: 'center',
-              elevation: 5,
+              color: props.closeBtnColor || 'white',
+              fontWeight: 'bold',
+              fontSize: 16,
             }}
-            pointerEvents="box-only"
-            onPress={props.onToggle}
           >
-            <Text
-              style={{
-                color: props.closeBtnColor || 'white',
-                fontWeight: 'bold',
-                fontSize: 16,
-              }}
-            >
-              X
-            </Text>
-          </Pressable>
-        </View>
+            X
+          </Text>
+        </Pressable>
 
         <Text
           style={{

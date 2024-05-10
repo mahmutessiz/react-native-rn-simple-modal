@@ -20,11 +20,14 @@ export default function App() {
         onToggle={() => {
           setIsOpen(!isOpen);
         }}
-        details="Details"
+        details=" aliqua.This his ir sit amet, consectetur adiphe detailed information. lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         titleColor="teal"
-        closeBtnColor="darkgray"
-        closeBtnBgColor="yellow"
+        closeBtnColor="white"
+        closeBtnBgColor="teal"
         detailsColor="black"
+        bgLayerColor="teal"
+        popupBgColor="skyblue"
+        marginTop={-20}
       />
     </>
   );
