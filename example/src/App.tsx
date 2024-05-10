@@ -25,7 +25,7 @@ export default function App() {
         closeBtnColor="white"
         closeBtnBgColor="teal"
         detailsColor="black"
-        bgLayerColor="transparent"
+        bgLayerColor="rgba(0, 0, 0, 0.5)"
         popupBgColor="skyblue"
         marginTop={-20}
       />

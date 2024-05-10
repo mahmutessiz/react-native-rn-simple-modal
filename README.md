@@ -9,6 +9,20 @@ This is a simple and customasible modal for react-native. It's easy to use. All 
     // expo users
     npx expo install react-native-rn-simple-modal
 
+## Important!!
+
+Make sure that you put the component at the bottom of your other components.
+
+example:
+
+     <>
+         //  Your components  
+         <View>some other components</View> 
+         
+         // The component you wanna use for modal
+         <OpenDetails //Your props... />
+    </>
+
 ## Usage
 
     // import component from the library

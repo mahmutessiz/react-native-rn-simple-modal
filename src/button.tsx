@@ -26,8 +26,6 @@ export default function OpenDetails(props: {
           backgroundColor: props.bgLayerColor || 'rgba(0, 0, 0, 0.1)',
           justifyContent: 'center',
           alignItems: 'center',
-          zIndex: 8,
-          elevation: 8,
         },
       ]}
     >
