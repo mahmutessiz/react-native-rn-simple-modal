@@ -62,6 +62,10 @@ interface OpenDetailsProps {
    * Margin from the top of the screen for the modal content.
    */
   marginTop?: number;
+  /**
+   * Color for the right button text.
+   */
+  rightBtnColor?: string;
 }
 
 export default function OpenDetailsWithButtons(props: OpenDetailsProps) {
@@ -149,23 +153,35 @@ export default function OpenDetailsWithButtons(props: OpenDetailsProps) {
             style={{
               padding: 5,
               borderRadius: 5,
-              backgroundColor: 'green',
+              backgroundColor: props.closeBtnBgColor || 'gray',
               elevation: 5,
             }}
             onPress={props.buttonLeftFunc}
           >
-            <Text>deneme2</Text>
+            <Text
+              style={{
+                color: props.closeBtnColor,
+              }}
+            >
+              deneme2
+            </Text>
           </Pressable>
           <Pressable
             style={{
               padding: 5,
               borderRadius: 5,
-              backgroundColor: 'red',
+              backgroundColor: props.rightBtnColor || 'gray',
               elevation: 5,
             }}
             onPress={props.buttonRightFunc}
           >
-            <Text>deneme</Text>
+            <Text
+              style={{
+                color: props.closeBtnColor,
+              }}
+            >
+              deneme
+            </Text>
           </Pressable>
         </View>
       </View>

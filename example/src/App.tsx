@@ -48,6 +48,7 @@ export default function App() {
         bgLayerColor="rgba(0, 0, 0, 0.5)"
         popupBgColor="skyblue"
         marginTop={-20}
+        rightBtnColor="darkgoldenrod"
       />
     </>
   );
