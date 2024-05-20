@@ -63,7 +63,7 @@ interface OpenDetailsProps {
    */
   marginTop?: number;
   /**
-   * Color for the right button text.
+   * Color for the right button.
    */
   rightBtnColor?: string;
 }

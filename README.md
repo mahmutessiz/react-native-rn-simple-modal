@@ -2,6 +2,7 @@
 
 This is a simple and customasible modal for react-native. It's easy to use. All you need is import the component than use props to customise it.
 
+### Note: This package is under development. It's not meant to be used in real world apps yet. 
 
 ## Installation
 
