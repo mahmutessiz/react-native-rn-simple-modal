@@ -66,6 +66,10 @@ interface OpenDetailsProps {
    * Color for the right button.
    */
   rightBtnColor?: string;
+  /**
+   * Color for the left button.
+   */
+  leftBtnColor?: string;
 }
 
 export default function OpenDetailsWithButtons(props: OpenDetailsProps) {
@@ -153,7 +157,7 @@ export default function OpenDetailsWithButtons(props: OpenDetailsProps) {
             style={{
               padding: 5,
               borderRadius: 5,
-              backgroundColor: props.closeBtnBgColor || 'gray',
+              backgroundColor: props.leftBtnColor || 'gray',
               elevation: 5,
             }}
             onPress={props.buttonLeftFunc}
@@ -170,7 +174,7 @@ export default function OpenDetailsWithButtons(props: OpenDetailsProps) {
             style={{
               padding: 5,
               borderRadius: 5,
-              backgroundColor: props.rightBtnColor || 'gray',
+              backgroundColor: props.rightBtnColor || 'teal',
               elevation: 5,
             }}
             onPress={props.buttonRightFunc}
